@@ -26,7 +26,8 @@
     "release:major": "standard-version --release-as major && git push --follow-tags origin master",
     "ci": "npm run lint && npm run test && npm run e2e && npm run build:ssr && npm run validate:server",
     "prepare:deploy": "bash scripts/prepare-deploy.sh",
-    "deploy": "npm run build:ssr && npm run prepare:deploy && firebase deploy"
+    "deploy": "npm run build:ssr && npm run prepare:deploy && firebase deploy",
+    "postinstall": "node patch.js"
   },
   "private": true,
   "engines": {
@@ -73,7 +74,9 @@
     "ngx-logger": "3.3.13",
     "preboot": "7.0.0",
     "rxjs": "6.5.2",
+    "truffle-contract": "^4.0.16",
     "tslib": "1.10.0",
+    "web3": "1.0.0-beta.36",
     "zone.js": "0.9.1"
   },
   "devDependencies": {
