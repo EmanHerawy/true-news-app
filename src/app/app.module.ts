@@ -21,6 +21,8 @@ import {ENDPOINTS_CONFIG, EndpointsConfig} from './configs/endpoints.config';
 import {LazyLoadImageModule} from 'ng-lazyload-image';
 import {RouterModule} from '@angular/router';
 import {PrebootModule} from 'preboot';
+import { AddArticleComponent } from './pages/add-article/add-article.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 declare const require;
 
@@ -50,6 +52,8 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
     PrebootModule.withConfig({appRoot: 'app-root'}),
     HttpClientModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CookieModule.forRoot(),
@@ -66,7 +70,8 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
   declarations: [
     HomePageComponent,
     Error404PageComponent,
-    AppComponent
+    AppComponent,
+    AddArticleComponent
   ],
   providers: [
     {provide: APP_CONFIG, useValue: AppConfig},
