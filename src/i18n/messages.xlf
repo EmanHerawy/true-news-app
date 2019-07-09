@@ -28,13 +28,22 @@
           <context context-type="sourcefile">app/shared/components/search-bar/search-bar.component.html</context>
           <context context-type="linenumber">2</context>
         </context-group>
-      </trans-unit><trans-unit id="angularExampleApp" datatype="html">
+      </trans-unit>
+      <trans-unit id="angularExampleApp" datatype="html">
         <source>Angular Example App 2019</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/footer/footer.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
-      </trans-unit><trans-unit id="offlineMessage" datatype="html">
+      </trans-unit>
+      <trans-unit id="angularApp" datatype="html">
+        <source>True News App 2019</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/components/footer/footer.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="offlineMessage" datatype="html">
         <source>Without connection we can not load anything!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/app.component.html</context>
