@@ -1,6 +1,6 @@
 <div >
   <h2 class="header__title" >Add New Post</h2>
-  <div id="form-loading" *ngIf="!heroes">
+  <!-- <div id="form-loading" *ngIf="!heroes">
     <form>
       <div class="input-container">
         <app-loading-placeholder [height]="'2rem'"></app-loading-placeholder>
@@ -11,9 +11,9 @@
 
       <button aria-label="create button" mat-raised-button [disabled]="true" i18n="@@create">Post</button>
     </form>
-  </div>
-  <div *ngIf="heroes">
-    <form [formGroup]="myForm" #form="ngForm" ngxScrollToFirstInvalid (ngSubmit)="createNewHero()"
+  </div> -->
+  <div >
+    <form [formGroup]="myForm" #form="ngForm" ngxScrollToFirstInvalid (ngSubmit)="onSave()"
       autocomplete="on">
       <mat-form-field class="input-container">
         <input matInput url="hurl" type="text" placeholder="Article URL "

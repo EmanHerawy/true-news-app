@@ -8,13 +8,14 @@ import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {HeaderComponent} from './components/header/header.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import {HeroCardComponent} from './components/hero-card/hero-card.component';
 import {NgxExampleLibraryModule} from '@ismaestro/ngx-example-library';
-import {HeroLoadingComponent} from './components/hero-loading/hero-loading.component';
 import {NgxScrollToFirstInvalidModule} from '@ismaestro/ngx-scroll-to-first-invalid';
 import {LoadingPlaceholderComponent} from './components/loading-placeholder/loading-placeholder.component';
 import {CapitalizeFirstPipe} from './pipes/capitalize-first.pipe';
 import {LazyLoadImageModule} from 'ng-lazyload-image';
+
+import { ArticleLoadingComponent } from './components/article-loading/article-loading.component';
+import { ArticleCardComponent } from './components/article-card/article-card.component';
 
 @NgModule({
   imports: [
@@ -32,10 +33,10 @@ import {LazyLoadImageModule} from 'ng-lazyload-image';
     SearchBarComponent,
     FooterComponent,
     SpinnerComponent,
-    HeroCardComponent,
-    HeroLoadingComponent,
     LoadingPlaceholderComponent,
-    CapitalizeFirstPipe
+    ArticleCardComponent,
+    CapitalizeFirstPipe,
+    ArticleLoadingComponent
   ],
   exports: [
     CommonModule,
@@ -46,8 +47,9 @@ import {LazyLoadImageModule} from 'ng-lazyload-image';
     SearchBarComponent,
     FooterComponent,
     SpinnerComponent,
-    HeroCardComponent,
-    HeroLoadingComponent,
+
+    ArticleLoadingComponent,
+    ArticleCardComponent,
     NgxScrollToFirstInvalidModule,
     LoadingPlaceholderComponent,
     CapitalizeFirstPipe,
