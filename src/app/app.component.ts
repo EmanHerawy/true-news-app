@@ -52,11 +52,11 @@ export class AppComponent implements OnInit {
               content: this.i18n({value: 'Home meta description', id: '@@homeMetaDescription'})
             });
             break;
-          case '/' + RoutesConfig.routesNames.heroes.basePath:
-            this.title.setTitle('Heroes list');
+          case '/' + RoutesConfig.routesNames.articles.basePath:
+            this.title.setTitle('Add New');
             this.meta.updateTag({
               name: 'description',
-              content: this.i18n({value: 'Heroes meta description', id: '@@heroesMetaDescription'})
+              content: 'add new article'
             });
             break;
         }

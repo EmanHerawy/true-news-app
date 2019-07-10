@@ -3,12 +3,16 @@ import {InjectionToken} from '@angular/core';
 export let ENDPOINTS_CONFIG = new InjectionToken('endpoints.config');
 
 export const EndpointsConfig: any = {
-  heroes: {
-    list: 'heroes',
-    detail: getHeroDetail
+  articles: {
+    list: 'articles',
+    detail: getDetail,
+    add: getNew
   }
 };
 
-export function getHeroDetail(id) {
-  return `/heroes/${id}`;
+export function getDetail(id) {
+  return `/articles/${id}`;
+}
+export function getNew() {
+  return `/articles/new`;
 }

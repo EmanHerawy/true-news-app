@@ -5,7 +5,6 @@ import {AppComponent} from './app.component';
 import {APP_CONFIG, AppConfig} from './configs/app.config';
 import {SharedModule} from './shared/shared.module';
 import {NgxExampleLibraryModule} from '@ismaestro/ngx-example-library';
-import {FirebaseModule} from './shared/modules/firebase.module';
 import {SentryErrorHandler} from './modules/core/sentry.errorhandler';
 import {BrowserModule, ɵgetDOM} from '@angular/platform-browser';
 import {I18n} from '@ngx-translate/i18n-polyfill';
@@ -57,7 +56,6 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
     AppRoutingModule,
     BrowserAnimationsModule,
     CookieModule.forRoot(),
-    FirebaseModule,
     NgxExampleLibraryModule.forRoot({
       config: {
         say: 'hello'
@@ -77,7 +75,7 @@ export function appInitializer(document: HTMLDocument, platformId: object) {
     {provide: APP_CONFIG, useValue: AppConfig},
     {provide: ROUTES_CONFIG, useValue: RoutesConfig},
     {provide: ENDPOINTS_CONFIG, useValue: EndpointsConfig},
-    {provide: ErrorHandler, useClass: SentryErrorHandler},
+   {provide: ErrorHandler, useClass: SentryErrorHandler},
     {
       provide: TRANSLATIONS,
       useFactory: (locale) => {

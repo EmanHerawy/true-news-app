@@ -1,7 +1,5 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {SearchBarComponent} from './search-bar.component';
-import {HeroService} from '../../../modules/heroes/shared/hero.service';
-import {Hero} from '../../../modules/heroes/shared/hero.model';
 import {of} from 'rxjs';
 import {configureTestSuite} from 'ng-bullet';
 import {MockPipe} from 'ng-mocks';
@@ -34,7 +32,6 @@ describe('SearchBarComponent', () => {
         SearchBarComponent
       ],
       providers: [
-        {provide: HeroService, useValue: heroServiceSpy},
         {provide: ROUTES_CONFIG, useValue: RoutesConfig}
       ]
     });
@@ -51,13 +48,4 @@ describe('SearchBarComponent', () => {
     expect(component).toBeTruthy();
   }));
 
-  it('should filter heroes array', (() => {
-    component.defaultHeroes = [
-      new Hero({id: 1, name: 'batman', default: true}),
-      new Hero({id: 2, name: 'spiderman', default: false})
-    ];
-    expect(component.filterHeroes('batman').length).toBe(1);
-    expect(component.filterHeroes('spiderman').length).toBe(0);
-    expect(component.filterHeroes('').length).toBe(2);
-  }));
 });

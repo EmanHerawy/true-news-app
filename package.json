@@ -18,8 +18,6 @@
     "release:minor": "standard-version --release-as minor && git push --follow-tags origin master",
     "release:major": "standard-version --release-as major && git push --follow-tags origin master",
     "ci": "npm run lint  ",
-    "prepare:deploy": "bash scripts/prepare-deploy.sh",
-    "deploy": "npm run build:ssr && npm run prepare:deploy && firebase deploy",
     "postinstall": "node patch.js"
   },
   "private": true,
@@ -58,7 +56,6 @@
     "classlist.js": "1.1.20150312",
     "core-js": "3.1.4",
     "express": "4.17.1",
-    "firebase": "6.2.0",
     "grpc": "1.21.1",
     "helmet": "3.18.0",
     "ng-animate": "0.3.4",

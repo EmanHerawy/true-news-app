@@ -8,7 +8,7 @@
         </source><target state="final">Home</target>
 
       <context-group purpose="location"><context context-type="sourcefile">app/shared/components/header/header.component.html</context><context context-type="linenumber">5</context></context-group></trans-unit><trans-unit id="findHero" datatype="html">
-        <source>Look for a hero!</source><target state="final">Look for a hero!</target>
+        <source>Look for an article!</source><target state="final">Look for an article!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/search-bar/search-bar.component.html</context>
           <context context-type="linenumber">2</context>
@@ -38,7 +38,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="topHeroes" datatype="html">
-        <source>Heroes most liked</source><target state="final">Heroes most liked</target>
+        <source>Recent News</source><target state="final">Recent News</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/pages/home-page/home-page.component.html</context>
           <context context-type="linenumber">4</context>
@@ -204,9 +204,9 @@
         </context-group>
       </trans-unit><trans-unit id="@@cannotVote" datatype="html">
         <source>Can't vote anymore</source><target state="final">Can't vote anymore</target>
-
+<!--
       <context-group purpose="location"><context context-type="sourcefile">src/app/modules/heroes/pages/heroes-list-page/heroes-list-page.component.ts</context><context context-type="linenumber">1</context></context-group><context-group purpose="location"><context context-type="sourcefile">src/app/shared/components/hero-card/hero-card.component.ts</context><context context-type="linenumber">1</context></context-group></trans-unit><trans-unit id="@@heroRemoved" datatype="html">
-        <source>Hero removed</source><target state="final">Hero removed</target>
+        <source>Hero removed</source><target state="final">Hero removed</target> -->
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/modules/heroes/pages/heroes-list-page/heroes-list-page.component.ts</context>
           <context context-type="linenumber">1</context>
