@@ -1,5 +1,5 @@
-@import "../../shared/styles/mixins";
-@import "../../shared/styles/colors";
+@import '../../shared/styles/mixins';
+@import '../../shared/styles/colors';
 
 a {
   @include text-small-grey();
@@ -55,7 +55,7 @@ a {
 
 form {
   display: grid;
-  width: 80%;
+  width: 50%;
   @include push--auto();
 
   .mat-raised-button {
