@@ -14,6 +14,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   end = 2;
   finsied = false;
   data = [];
+  rumorNum;
   articles = [
     'https://github.com/',
     'https://www.facebook.com/',
@@ -28,7 +29,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     private web3Service: Web3Service
   ) {}
   ngOnInit() {
-    this.getUrl();
+    this.getCount();
     let item = {
       title: 'Google',
       description: 'Search webpages, images, videos and more.',
@@ -37,8 +38,9 @@ export class HomePageComponent implements OnInit, OnDestroy {
     };
     this.data.push(item);
     //window.addEventListener('scroll', this.scroll, true); //third parameter
-    for (this.start; this.start <= this.end; this.start++) {
+    for (this.start; this.start <= this.rumorNum; this.start++) {
       // this.getData(this.articles[this.start])
+
       console.log(this.start, 'this.start');
     }
   }
@@ -55,17 +57,25 @@ export class HomePageComponent implements OnInit, OnDestroy {
     //this is used to be able to remove the event listener
   };
 
-  getData(url) {
+  getData(url, address) {
     this.dataService.getDate(url).subscribe(_d => {
       console.log(_d, 'data');
-      this.data.push(_d);
+      let rumor = { _d, address };
+      this.data.push(rumor);
     });
   }
-  getUrl() {
+  getRumor(id) {
+    this.web3Service.getRumor(id).then(_d => {
+      console.log(_d, 'data');
+      // this.getData(_d.url)
+    });
+  }
+  getCount() {
     try {
-      this.web3Service.rumorEvent3().then(tx => {
+      this.web3Service.getCount().then(tx => {
         console.log(tx, 'transaction ');
         // this.getData(tx)
+        this.rumorNum = tx;
       });
     } catch (error) {
       console.log(error, 'error');

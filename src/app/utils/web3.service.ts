@@ -57,7 +57,7 @@ export class Web3Service {
     //   });
 
     // // unsubscribes the subscription
-    // subscription.unsubscribe((error, success) => {
+    // subscription.unsubscribe((error, success) => { "0x40c7CD1020a177a514e0009b6989C14a69A6d192","0x8D9bA8F703d3b0a6e71D3950464d3541Cfb47Ff1"
     //   if (error) return console.error(error);
 
     //   console.log('Successfully unsubscribed!');
@@ -83,6 +83,10 @@ export class Web3Service {
       this.accounts = accs;
       this.account = this.accounts[0];
       console.log('this.account', this.account);
+      // this.initplz(
+      //   '0x8D9bA8F703d3b0a6e71D3950464d3541Cfb47Ff1',
+      //   '0x8D9bA8F703d3b0a6e71D3950464d3541Cfb47Ff1'
+      // ).
       //  this.refreshBalance();
     });
   }
@@ -119,6 +123,31 @@ export class Web3Service {
 
         return instance.Rumors(
           url,
+
+          {
+            from: this.account
+          }
+        );
+      })
+      .then(res => {
+        this.setStatus('Transaction complete!');
+        return res;
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error sending coin; see log.');
+      });
+    return result;
+  }
+  async initplz(url1, url2) {
+    const result = await this.newscontract
+      .deployed()
+      .then(instance => {
+        console.log(instance, 'instance');
+
+        return instance.initplz(
+          url1,
+          url2,
 
           {
             from: this.account
@@ -213,6 +242,50 @@ export class Web3Service {
       .then(res => {
         this.setStatus('Transaction complete!');
         return res;
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error sending coin; see log.');
+      });
+    return result;
+  }
+  async getCount() {
+    console.log('decimals');
+    const result = await this.newscontract
+      .deployed()
+      .then(instance => {
+        // meta = instance;
+        console.log('instance', instance);
+
+        return instance.rumorsCount.call();
+      })
+      .then(rs => {
+        console.log('rs', rs);
+        this.setStatus('Transaction complete!');
+
+        return rs.toNumber();
+      })
+      .catch(e => {
+        console.log(e);
+        this.setStatus('Error sending coin; see log.');
+      });
+    return result;
+  }
+  async getRumor(id) {
+    console.log('decimals');
+    const result = await this.newscontract
+      .deployed()
+      .then(instance => {
+        // meta = instance;
+        console.log('instance', instance);
+
+        return instance.getRumor.call(id);
+      })
+      .then(rs => {
+        console.log('rs', rs);
+        this.setStatus('Transaction complete!');
+
+        return rs;
       })
       .catch(e => {
         console.log(e);
